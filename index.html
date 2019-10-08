@@ -280,6 +280,8 @@ for the JavaScript code in this tag.
 <div id="text-table-of-contents">
 <li><a href="#org2e0bcd6">Introduction</a></li>
 <li><a href="#org2e0bcd5">How to setup GENEC</a></li>
+<li><a href="#org2e0bcd4">How to plot GENEC output in Python</a></li>
+
 <div class="figure">
 <p><a href="star2_test.png"><img src="star2_test.png" alt="star2_test.png" /></a>
 </p>
@@ -306,7 +308,6 @@ focusing on internal transport in stars by taking into account both rotation and
 
   <h2 id="org2e0bcd5">How to Setup GENEC</h2>
   <div class="outline-text-2" id="text-org2e0bcd5">
-
 
 <p>
 To copy the code to your computer, run:
@@ -401,6 +402,31 @@ Default settings are: - Asplund-Cunha abundances - scaled solar - Geneva format 
   You can stop the calculation with Ctrl-c or either specify a phase to stop at (ex. -p 2 to stop at the end of MS, -p 4 to stop at the end of C-b), or a model number to stop at (ex. -m 2001).
 
   Then look at the <a href="https://github.com/GESEG/GENEC_toolBox">GENEC_toolBox documentation</a> on GitHub to learn how to plot the output using Python.     </p>
+
+  <h2 id="org2e0bcd4">How to plot GENEC output in Python</h2>
+  <div class="outline-text-2" id="text-org2e0bcd4">
+
+    <p> Using <a href="https://github.com/GESEG/GENEC_toolBox">GENEC_toolBox</a> and Python, you can extract and plot output from GENEC.
+    There is multiple way to use Python (Anaconda,Spyder,Jupyter NoteBook, ...). We will concentrate here on one way to use it with <b>iPython</b>.
+    You can first dowload it using:</p>
+    <pre class="example">pip install ipython</pre>
+<p> You can then launch iPython already loaded with the Pylab library by typing:</p>
+<pre class="example">ipython --pylab=auto</pre>
+
+<p> You can directly launch some script each time you use iPython by going to </p>:
+<pre class="example">cd ~/.ipython/profile_default/startup
+gedit start.py</pre>
+
+<p> And then add the following lines for example:</p>
+
+<pre class="src-python">sys.path.append('/home/seb/Recherche/GENEC/GENEC_toolBox/')
+import GENEC_toolBox as gtb
+print(time.asctime( time.localtime(time.time()) ))
+print('GENEC_toolBox has been loaded.')</pre>
+
+<p> Now you can refer to the <a href="GENEC_toolBox_Manual.pdf">GENEC_toolBox documentation</a> to learn what features you can use to plot and extract GENEC data.
+</p>   
+
 </div>
 </div>
 </div>

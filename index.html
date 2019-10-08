@@ -338,12 +338,15 @@ git checkout -b feature/my_feature develop</pre>
 
       Create the following environment variable to point to your code directory (add the following line to your <code>~/.bashrc file</code>): </p>
 
-      <pre class="src src-f90"><span style="color: #00ffff;">export</span> <span style="color: #ffa07a;">'GENEC_INPUT_DIR=/home/data/git_repos/GENEC/code/'</span></pre>
+      <pre class="src src-f90"><span style="color: #00ffff;">export</span> <span style="color: #ffa07a;"> GENEC_INPUT_DIR="path/to/GENEC/code/"</span>
+      <span style="color: #00ffff;">export</span> <span style="color: #ffa07a;"> GENEC_DEFAULT_PROGRAM="path/to/GENEC/code/make/evosolL2016"</span>
+      <span style="color: #00ffff;">export</span> <span style="color: #ffa07a;"> GENEC_EMAIL_ADDRESS="my.email@unige.ch"</span></pre>
+
     <p> You can reload your <code>~/.bashrc</code> file by typing:
       <pre class="example">source ~/.bashrc</pre>
       <p>
-      Go into the code directory. then create the make directory: </p>
-
+      You can check by typing <code>$GENEC_INPUT_DIR</code> in your terminal the environment variables have been declared.
+      Go into the code directory, then create the make directory: </p>
       <pre class="example">
 mkdir make
 cd make
@@ -389,9 +392,7 @@ Default settings are: - Asplund-Cunha abundances - scaled solar - Geneva format 
 <p>It creates three files: <code>ini020Z14.com</code> is the parameter card ;
  <code>netalu.dat</code> and <code>netdef.in</code> are initial composition files.
 </p>
-<p>
-  Copy the <code>GENEC/tools/Origin_launch.py</code> into your run directory. You can modify the script as needed.
-</p>
+
 <p>Now you can start the model: </p>
 
   <pre class="example">./Origin_launch.py -i ini020Z14.com P020z14S0</pre>
@@ -399,8 +400,7 @@ Default settings are: - Asplund-Cunha abundances - scaled solar - Geneva format 
 
   You can stop the calculation with Ctrl-c or either specify a phase to stop at (ex. -p 2 to stop at the end of MS, -p 4 to stop at the end of C-b), or a model number to stop at (ex. -m 2001).
 
-  Then look at the GENEC/docs/ to learn how to plot the output using <code>Origin_Tools.py</code>.     </p>
-
+  Then look at the <a href="https://github.com/GESEG/GENEC_toolBox">GENEC_toolBox documentation</a> to learn how to plot the output using Python.     </p>
 </div>
 </div>
 </div>
